@@ -6,12 +6,10 @@
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 >
     <Page
-        id="PageRating"
         showHeader="true"
-        title="{i18n>homeViewTitle}"
+        title="Mudei aqui a home"
     >
         <l:BlockLayout
-            id="BlockLayout"
             background="Default"
         >
             <l:BlockLayoutRow>
