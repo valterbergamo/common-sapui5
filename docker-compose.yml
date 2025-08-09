@@ -4,9 +4,8 @@ services:
     working_dir: /home/node/app
     environment:
       - NODE_ENV=development
-      - CDS_AUTH_KIND=mocked
     ports:
-      - "8005:8081"   # Porta exposta para fora
+      - "8005:8081"
     volumes:
       - .:/home/node/app
     networks:
