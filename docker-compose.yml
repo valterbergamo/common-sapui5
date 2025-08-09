@@ -4,24 +4,12 @@ services:
     working_dir: /home/node/app
     environment:
       - NODE_ENV=development
-      - CDS_AUTH_KIND=mocked  # Desativar XSUAA para desenvolvimento local
-    expose:
-      - "8080"  # disponível só na rede docker
+      - CDS_AUTH_KIND=mocked
+    ports:
+      - "8005:8081"   # Porta exposta para fora
     volumes:
       - .:/home/node/app
-      - /home/node/app/node_modules # Evita sobrescrever node_modules com volume local
-    command: ["npm", "start"]
-    networks:
-      - sapui5-network
-
-  sapui5-forward:
-    image: alpine/socat
-    command: "tcp-listen:8005,reuseaddr,fork tcp:sapui5-app:8080"
-    ports:
-      - "8005:8005"
-    depends_on:
-      - sapui5-app
-    restart: unless-stopped
+      - /home/node/app/node_modules
     networks:
       - sapui5-network
 
