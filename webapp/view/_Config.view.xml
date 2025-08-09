@@ -8,8 +8,8 @@
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
     xmlns:smartTable="sap.ui.comp.smarttable">
 
-    <Page showHeader="true" showFooter="true" title="{i18n>configViewTitle}">
-		<l:BlockLayout id="BlockLayout" background="Default">
+    <Page showHeader="true" showFooter="true" title="Teste">
+		<l:BlockLayout background="Default">
 			<l:BlockLayoutRow>
 				<l:BlockLayoutCell backgroundColorSet="ColorSet9" backgroundColorShade="ShadeA"	width="3">
 

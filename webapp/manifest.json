@@ -224,30 +224,30 @@
                     "controlAggregation": "beginColumnPages"
                 },
                 "notPermission": {
-                    "viewName": "NotPermission",
+                    "viewName": "_NotPermission",
                     "viewId": "notPermission",
                     "title": "{i18n>notPermissionViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "help": {
-                    "viewName": "Help",
+                    "viewName": "_Help",
                     "viewId": "help",
                     "title": "{i18n>helpViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "rating": {
-                    "viewName": "Rating",
+                    "viewName": "_Rating",
                     "viewId": "rating",
                     "title": "{i18n>ratingViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "notFound": {
-                    "viewName": "NotFound",
+                    "viewName": "_NotFound",
                     "viewId": "notFound",
                     "controlAggregation": "beginColumnPages"
                 },
                 "menu": {
-                    "viewName": "Menu",
+                    "viewName": "_Menu",
                     "viewId": "menu",
                     "viewLevel": 2,
                     "title": "{i18n>menuViewTitle}",
@@ -261,37 +261,37 @@
                     "controlAggregation": "beginColumnPages"
                 },
                 "token": {
-                    "viewName": "Token",
+                    "viewName": "_Token",
                     "viewId": "token",
                     "title": "{i18n>tokenViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "config": {
-                    "viewName": "Config",
+                    "viewName": "_Config",
                     "viewId": "config",
                     "title": "{i18n>configViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "profiles": {
-                    "viewName": "Profiles",
+                    "viewName": "_Profiles",
                     "viewId": "profiles",
                     "title": "{i18n>profilesViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "partners": {
-                    "viewName": "Partners",
+                    "viewName": "_Partners",
                     "viewId": "partners",
                     "title": "{i18n>partnersViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "users": {
-                    "viewName": "Users",
+                    "viewName": "_Users",
                     "viewId": "users",
                     "title": "{i18n>usersViewTitle}",
                     "controlAggregation": "beginColumnPages"
                 },
                 "groups": {
-                    "viewName": "Groups",
+                    "viewName": "_Groups",
                     "viewId": "groups",
                     "title": "{i18n>groupsViewTitle}",
                     "controlAggregation": "beginColumnPages"
