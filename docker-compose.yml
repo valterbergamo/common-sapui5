@@ -9,7 +9,6 @@ services:
       - "8005:8081"   # Porta exposta para fora
     volumes:
       - .:/home/node/app
-      - /home/node/app/node_modules
     networks:
       - sapui5-network
 
