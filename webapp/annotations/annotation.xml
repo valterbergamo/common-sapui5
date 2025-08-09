@@ -8,8 +8,8 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
-    <edmx:Reference Uri="/sap/opu/odata/xcop/FSC_SERVISE_SRV/$metadata">
-        <edmx:Include Namespace="FSC_SERVISE_SRV"/>
+    <edmx:Reference Uri="/sap/opu/odata/xcop/FSC_SERVICE_SRV/$metadata">
+        <edmx:Include Namespace="FSC_SERVICE_SRV"/>
     </edmx:Reference>
 
     <edmx:DataServices>

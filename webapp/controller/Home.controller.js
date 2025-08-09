@@ -18,24 +18,19 @@ sap.ui.define(
         oRouter = oOwnerComponent.getRouter()
 
         this.getRouter().getRoute('home').attachPatternMatched(this._onObjectMatched, this)
-        this.renderTable("EntitysTable");
         
       },
       onBeforeRendering: function () {
         //debugger
-        let oView = this.getView()
-        let oModel = oView.getModel()
-        this.setModelHeader(oModel)
-        //this.screenControl()
       },
       /**
        * @override
        */
       onAfterRendering: function () {
-        //debugger
+
       },
       _onObjectMatched: function (oEvent) {
-        //this.checkViewPermission()
+
       }
     })
   }

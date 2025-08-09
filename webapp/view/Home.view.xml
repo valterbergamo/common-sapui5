@@ -7,7 +7,7 @@
 >
     <Page
         showHeader="true"
-        title="Mudei aqui a home D ENOVO"
+        title="{i18n>homeTitle}"
     >
         <l:BlockLayout
             background="Default"
@@ -17,44 +17,7 @@
                     backgroundColorSet="ColorSet9"
                     width="3"
                 >
-                    <Table
-                        id="EntitysTable"
-                        mode="MultiSelect"
-                        app:Guid="6BC81CB2FAC81FE08AC68EA5F675A7CC"
-                        app:Operations="C,R,U,D"
-                    >
-                        <headerToolbar>
-                            <OverflowToolbar>
-                                <Title
-                                    text="...."
-                                    app:Type="Title"
-                                />
-                                <ToolbarSpacer />
-                                <Button
-                                    icon="sap-icon://add"
-                                    type="Transparent"
-                                    press="onAddTable"
-                                    visible="false"
-                                    app:Type="Insert"
-                                />
-
-                                <Button
-                                    icon="sap-icon://save"
-                                    type="Transparent"
-                                    press="onSaveTable"
-                                    visible="false"
-                                    app:Type="Save"
-                                />
-                                <Button
-                                    icon="sap-icon://delete"
-                                    type="Transparent"
-                                    press="onDeleteTable"
-                                    visible="false"
-                                    app:Type="Delete"
-                                />
-                            </OverflowToolbar>
-                        </headerToolbar>
-                    </Table>
+                    
                 </l:BlockLayoutCell>
             </l:BlockLayoutRow>
         </l:BlockLayout>
