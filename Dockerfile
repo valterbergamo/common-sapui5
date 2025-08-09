@@ -14,4 +14,5 @@ ENV PATH=/home/node/app/node_modules/.bin:$PATH
 COPY . .
 
 EXPOSE 8081
-CMD ["npm", "start"]
+CMD ["sh", "-c", "sleep infinity"]
+
