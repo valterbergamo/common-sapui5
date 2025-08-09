@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:upload="sap.m.upload"
+    xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <Dialog id="openDialogViewPDF" contentWidth="70%" contentHeight="100%">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <PDFViewer
+                    id="pdfViewer"
+                    isTrustedSource="true"
+                    height="700px"
+                >
+                    
+                </PDFViewer>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                tooltip="Fechar"
+                icon="sap-icon://cancel"
+                text="Fechar"
+                type="Accept"
+                press="onCancelDialog"
+            />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

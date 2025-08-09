@@ -1,0 +1,121 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <Dialog
+        id="openDialogGroup"
+        title="{i18n>titleGroup}"
+        contentWidth="350px"
+    >
+        <content>
+            <VBox
+                class="sapUiSmallMargin"
+                id="formContainer"
+            >
+                <Label
+                    text="Tipo de grupo"
+                    design="Bold"
+                    required="true"
+                />
+
+                <Select
+                    id="Grouptype"
+                    type="Default"
+                    textAlign="Initial"
+                    valueState="None"
+                    width="100%"
+                    forceSelection="false"
+                    showSecondaryValues="false"
+                    items="{/XCOP/FSC_GPTYPE>/results}"
+                >
+                    <core:ListItem
+                        key="{/XCOP/FSC_GPTYPE>Key}"
+                        text="{/XCOP/FSC_GPTYPE>Key} - {/XCOP/FSC_GPTYPE>Title}"
+                        additionalText="{/XCOP/FSC_GPTYPE>Title}"
+                    />
+                </Select>
+
+                <Label
+                    text="ID do grupo"
+                    design="Bold"
+                    required="true"
+                />
+                <Input
+                    id="Groupid"
+                    visible="true"
+                    maxLength="8"
+                    app:SuggestionTable="/XCOP/TFSC_GROUP:Groupid"
+                    app:DataType="CHAR"
+                    app:Leng="10"
+                    app:Mask=""
+                    app:Decimals=""
+                    app:UpperCase="X"
+                    app:Valexi=""
+                    app:TableName=""
+                    app:FieldName=""
+                    app:Filter=""
+                    showSuggestion="true"
+                    showValueHelp="false"
+                    suggest="onSuggest"
+                    liveChange="onLiveChange"
+                    valueHelpRequest="onSearchHelp"
+                />
+
+                <VBox height="20px" />
+                <Label
+                    text="Título"
+                    design="Bold"
+                    required="true"
+                />
+                <Input
+                    id="GroupTitle"
+                    visible="true"
+                    maxLength="30"
+                    app:SuggestionTable="/XCOP/TFSC_GROUP:Grouptitle"
+                    app:DataType="CHAR"
+                    app:Leng="30"
+                    app:Mask=""
+                    app:Decimals=""
+                    app:UpperCase=""
+                    app:Valexi=""
+                    app:TableName=""
+                    app:FieldName=""
+                    showSuggestion="true"
+                    showValueHelp="false"
+                    suggest="onSuggest"
+                    liveChange="onLiveChange"
+                    valueHelpRequest="onSearchHelp"
+                />
+
+                <VBox height="10px" />
+                <CheckBox
+                    id="Active"
+                    text="Ativo"
+                />
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                id="btCreateEntryGroups"
+                tooltip="Add"
+                icon="sap-icon://save"
+                text="Salvar"
+                type="Emphasized"
+                press="onCreateEntryGroups"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="btCancelDialogGroups"
+                tooltip="Add"
+                icon="sap-icon://cancel"
+                text="Cancelar"
+                type="Reject"
+                press="_onCancelDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

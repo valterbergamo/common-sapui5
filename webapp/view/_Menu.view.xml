@@ -1,0 +1,78 @@
+<mvc:View
+	controllerName="xcop.fsc.service.controller._Menu"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+	<Page showHeader="true" title="{i18n>menuViewTitle}">
+		<l:BlockLayout id="BlockLayout" background="Default">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell backgroundColorSet="ColorSet9" backgroundColorShade="ShadeA"	width="3">
+					<smartTable:SmartTable
+                            id="smartTableMenu" 
+                            tableType="ResponsiveTable" 
+                            persistencyKey="xcop.fsc.service.menuTableSet" 
+                            useVariantManagement="true"
+                            showRowCount="true" 
+                            useExportToExcel="true" 
+                            showFullScreenButton="true" 
+                            useTablePersonalisation="true" 
+                            enableAutoBinding="true" 
+                            entitySet="menuTableSet"
+                            
+                            initiallyVisibleFields="Titlei18nkey,Icon,Menutype,Menukey,Menuparentkey,Navto,Ordermenu,Expanded,Authx,Active"
+                            ignoredFields=""
+
+                            editTogglable="true" 
+                            app:useSmartField="true" 
+                            app:useSmartToggle="true"
+                            >
+
+                            <smartTable:customToolbar>
+                                <OverflowToolbar id="idOver" design="Transparent">
+                                    <ToolbarSpacer/>
+                                    
+                                    <OverflowToolbarButton icon="sap-icon://refresh" id="btRefresh" press="onRefreshModel"      visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://delete"  id="btDelete"  press="onDeleteMenu"        visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://save"    id="btSave"    press="onSaveModelSmart"    visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://add"     id="btcreate"  press="onCreateMenu"        visible="true" />
+                                    
+                                </OverflowToolbar>
+                            </smartTable:customToolbar>
+                            
+                            <smartTable:layoutData>
+                                <FlexItemData growFactor="15" baseSize="0%"/>
+                            </smartTable:layoutData>
+                            
+                            
+                            <Table id="tableAux" mode="MultiSelect" alternateRowColors="true" growing="true" growingThreshold="15">
+                                <columns>
+                                    <Column id="Icon2">
+                                        <customData>
+                                            <core:CustomData
+                                                key="p13nData"
+                                                value='\{"columnKey": "Icon2", "maxLength": "0","columnIndex":"0"}' >
+                                            </core:CustomData>
+                                        </customData>    
+                                        <Text text="Ícone" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation" press="onSelectMenu" vAlign="Middle">
+                                        <cells>
+                                            <core:Icon src="{= ${Icon} ? 'sap-icon://' + ${Icon} : 'sap-icon://less' }"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                                
+                            </Table>  
+                        </smartTable:SmartTable> 
+
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>    
+</mvc:View>

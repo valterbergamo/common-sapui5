@@ -1,0 +1,145 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:m="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:form="sap.ui.comp.smartform"
+    xmlns:sf="sap.ui.comp.smartfield"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="openDialogMenu"
+        title="{i18n>menuViewTitle}"
+        contentWidth="500px"
+        
+    >
+        <content>
+            <VBox
+                class="sapUiSmallMargin"
+                id="formContainer"
+            >
+                <f:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                >
+                    <f:content>
+                        <Label
+                            text="Viewname"
+                            design="Bold"
+                            required="true"
+                        />
+                        <Input
+                            id="Viewname"
+                            maxLength="30"
+                        />
+
+                        <Label
+                            text="Tipo menu"
+                            design="Bold"
+                            required="true"
+                        />
+
+                        <Select
+                            id="Menutype"
+                            type="Default"
+                            textAlign="Initial"
+                            valueState="None"
+                            forceSelection="false"
+                            showSecondaryValues="true"
+                            items="{/XCOP/FSC_MENUTYPE>/results}"
+                        >
+                            <core:ListItem
+                                key="{/XCOP/FSC_MENUTYPE>Key}"
+                                text="{/XCOP/FSC_MENUTYPE>Key}"
+                                additionalText="{/XCOP/FSC_MENUTYPE>Title}"
+                            />
+                        </Select>
+
+                        <Label
+                            text="Key"
+                            design="Bold"
+                            required="true"
+                        />
+                        <Input
+                            id="Menukey"
+                            maxLength="15"
+                        />
+
+                        <Label
+                            text="Parent key"
+                            design="Bold"
+                        />
+                        <Input
+                            id="Menuparentkey"
+                            maxLength="15"
+                        />
+
+                        <Label
+                            text="Título"
+                            design="Bold"
+                            required="true"
+                        />
+                        <Input
+                            id="Titlei18nkey"
+                            maxLength="30"
+                        />
+
+                        <Label
+                            text="Navegação"
+                            design="Bold"
+                        />
+                        <Input
+                            id="Navto"
+                            maxLength="25"
+                        />
+
+                        <Label
+                            text="Ícone"
+                            design="Bold"
+                        />
+                        <Input
+                            id="Icon"
+                            maxLength="30"
+                        />
+
+                        <Label
+                            text="Ordem"
+                            design="Bold"
+                            required="true"
+                        />
+                        <Input
+                            id="Ordermenu"
+                            maxLength="3"
+                        />
+
+                        <CheckBox
+                            id="Expanded"
+                            text="Expandir"
+                        />
+                        <CheckBox
+                            id="Active"
+                            text="Ativo"
+                        />
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                tooltip="Add"
+                icon="sap-icon://save"
+                text="Salvar"
+                type="Emphasized"
+                press="onCreateEntryMenu"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                tooltip="Add"
+                icon="sap-icon://cancel"
+                text="Cancelar"
+                type="Reject"
+                press="_onCancelDialogMenu"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

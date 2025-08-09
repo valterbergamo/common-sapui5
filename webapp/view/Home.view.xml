@@ -1,0 +1,64 @@
+<mvc:View
+    controllerName="xcop.fsc.service.controller.Home"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+    <Page
+        id="PageRating"
+        showHeader="true"
+        title="{i18n>homeViewTitle}"
+    >
+        <l:BlockLayout
+            id="BlockLayout"
+            background="Default"
+        >
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell
+                    backgroundColorSet="ColorSet9"
+                    width="3"
+                >
+                    <Table
+                        id="EntitysTable"
+                        mode="MultiSelect"
+                        app:Guid="6BC81CB2FAC81FE08AC68EA5F675A7CC"
+                        app:Operations="C,R,U,D"
+                    >
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <Title
+                                    text="...."
+                                    app:Type="Title"
+                                />
+                                <ToolbarSpacer />
+                                <Button
+                                    icon="sap-icon://add"
+                                    type="Transparent"
+                                    press="onAddTable"
+                                    visible="false"
+                                    app:Type="Insert"
+                                />
+
+                                <Button
+                                    icon="sap-icon://save"
+                                    type="Transparent"
+                                    press="onSaveTable"
+                                    visible="false"
+                                    app:Type="Save"
+                                />
+                                <Button
+                                    icon="sap-icon://delete"
+                                    type="Transparent"
+                                    press="onDeleteTable"
+                                    visible="false"
+                                    app:Type="Delete"
+                                />
+                            </OverflowToolbar>
+                        </headerToolbar>
+                    </Table>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+    </Page>
+</mvc:View>

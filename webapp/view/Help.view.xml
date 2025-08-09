@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="xcop.fsc.service.controller.Help"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <MessagePage 
+        id="messagePageId"
+        title="{i18n>helpViewTitle}"
+        text="  "
+        icon="sap-icon://document"
+        
+        description="Criar página padrão de ajuda, com indicação do ramal do Service Desk 3241-8650 (ramal 101-8650) e também incluir PDF e textos de ajuda do aplicativo.">
+    </MessagePage>
+
+</mvc:View>

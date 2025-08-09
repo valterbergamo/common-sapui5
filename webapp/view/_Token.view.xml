@@ -1,0 +1,64 @@
+<mvc:View
+    controllerName="xcop.fsc.service.controller._Token"
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <Page showHeader="true" title="{i18n>homeViewTitle}">
+		<l:BlockLayout id="BlockLayout" background="Default">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell backgroundColorSet="ColorSet9" backgroundColorShade="ShadeA"	width="3">
+
+					<smartTable:SmartTable
+                            id="smartTableToken" 
+                            tableType="ResponsiveTable" 
+                            persistencyKey="xcop.fsc.service.tokenSet" 
+                            useVariantManagement="true"
+                            showRowCount="false" 
+                            useExportToExcel="true" 
+                            showFullScreenButton="true" 
+                            useTablePersonalisation="true" 
+                            enableAutoBinding="true" 
+                            entitySet="tokenSet"
+                                             
+                            initiallyVisibleFields="Token,Terminal,Userid,Lifnr,Name1,Logged,Mlogblk"
+                            ignoredFields=""
+
+                            
+                            editTogglable="true" 
+                            app:useSmartField="true" 
+                            app:useSmartToggle="true"
+                            >
+
+                            <smartTable:customToolbar>
+                                <OverflowToolbar id="idOver" design="Transparent">
+                                    <ToolbarSpacer/>
+                                    
+                                    <OverflowToolbarButton icon="sap-icon://refresh" id="btRefresh"  press="onRefreshModel"     visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://save"    id="btSave"     press="onSaveModelSmart"   visible="true"/>
+                                    
+                                </OverflowToolbar>
+                            </smartTable:customToolbar>
+
+                            <smartTable:layoutData>
+                                <FlexItemData growFactor="15" baseSize="0%"/>
+                            </smartTable:layoutData>
+                            
+                            
+                            <Table id="tableAux" mode="MultiSelect" alternateRowColors="true" growing="true" growingThreshold="15">
+                                
+                                <items>
+                                    <ColumnListItem type="Navigation" press="onSelectMenu" vAlign="Middle">
+                                    </ColumnListItem>
+                                </items>
+                                
+                            </Table>  
+                        </smartTable:SmartTable> 
+
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>  
+</mvc:View>

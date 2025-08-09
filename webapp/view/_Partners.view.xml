@@ -1,0 +1,63 @@
+<mvc:View
+	controllerName="xcop.fsc.service.controller._Partners"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+	<Page showHeader="true" title="{i18n>partnersViewTitle}">
+		<l:BlockLayout id="BlockLayout" background="Default">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell backgroundColorSet="ColorSet9" backgroundColorShade="ShadeA"	width="3">
+
+					<smartTable:SmartTable
+                            id="smartTableUsers" 
+                            tableType="ResponsiveTable" 
+                            persistencyKey="xcop.fsc.service.usersPartnersSet" 
+                            useVariantManagement="true"
+                            showRowCount="false" 
+                            useExportToExcel="true" 
+                            showFullScreenButton="true" 
+                            useTablePersonalisation="true" 
+                            enableAutoBinding="true" 
+                            entitySet="usersPartnersSet"
+                            
+                            initiallyVisibleFields="Lifnr,Name1,Active"
+                            ignoredFields="Mlogblk"
+
+                            editTogglable="true" 
+                            app:useSmartField="true" 
+                            app:useSmartToggle="true"
+                            >
+
+                            <smartTable:customToolbar>
+                                <OverflowToolbar id="idOver" design="Transparent">
+                                    <ToolbarSpacer/>
+                                    
+                                    <OverflowToolbarButton icon="sap-icon://refresh" id="btRefresh" press="onRefreshModel"      visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://delete"  id="btDelete"  press="onDeletePartners"        visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://save"    id="btSave"    press="onSaveModelSmart"    visible="true"/>
+                                    <OverflowToolbarButton icon="sap-icon://add"     id="btcreate"  press="onCreatePartners"        visible="true" />
+                                    
+                                </OverflowToolbar>
+                            </smartTable:customToolbar>
+                            
+                            <smartTable:layoutData>
+                                <FlexItemData growFactor="15" baseSize="0%"/>
+                            </smartTable:layoutData>
+                            
+                            
+                            <Table id="tableAux" mode="MultiSelect" alternateRowColors="true" growing="true" growingThreshold="15" >
+                                <items>
+                                    <ColumnListItem type="Navigation" press="onSelectPartnerDetail" vAlign="Middle">
+                                    </ColumnListItem>
+                                </items>
+                            </Table>  
+                        </smartTable:SmartTable> 
+
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>    
+</mvc:View>

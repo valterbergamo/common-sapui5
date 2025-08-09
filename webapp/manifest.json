@@ -1,0 +1,314 @@
+{
+    "_version": "1.17.0",
+    "sap.app": {
+        "id": "xcop.fsc.service",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:home",
+            "version": "1.12.1",
+            "toolsId": "0643ac71-842b-48ad-aa95-b6a722052976"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/xcop/FSC_SERVICE_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "annotations"
+                    ],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "annotations": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.71.49",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "xcop.fsc.service.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": true
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/main.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "viewType": "XML",
+                "viewPath": "xcop.fsc.service.view",
+                "controlId": "mainContents",
+                "transition": "slide",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target": [
+                        "home"
+                    ]
+                },
+                {
+                    "pattern": "NotPermission",
+                    "name": "notPermission",
+                    "target": [
+                        "notPermission"
+                    ]
+                },
+                {
+                    "pattern": "Help",
+                    "name": "help",
+                    "target": [
+                        "help"
+                    ]
+                },
+                {
+                    "pattern": "Rating",
+                    "name": "rating",
+                    "target": [
+                        "rating"
+                    ]
+                },
+                {
+                    "pattern": "Menu",
+                    "name": "menu",
+                    "target": [
+                        "menu"
+                    ]
+                },
+                {
+                    "pattern": "ScreenControl",
+                    "name": "screenControl",
+                    "target": [
+                        "screenControl"
+                    ]
+                },
+                {
+                    "pattern": "Token",
+                    "name": "token",
+                    "target": [
+                        "token"
+                    ]
+                },
+                {
+                    "pattern": "Config",
+                    "name": "config",
+                    "target": [
+                        "config"
+                    ]
+                },
+                {
+                    "pattern": "Profiles",
+                    "name": "profiles",
+                    "target": [
+                        "profiles"
+                    ]
+                },
+                {
+                    "pattern": "Partners",
+                    "name": "partners",
+                    "target": [
+                        "partners"
+                    ]
+                },
+                {
+                    "pattern": "Users",
+                    "name": "users",
+                    "target": [
+                        "users"
+                    ]
+                },
+                {
+                    "pattern": "Groups",
+                    "name": "groups",
+                    "target": [
+                        "groups"
+                    ]
+                },
+                {
+                    "pattern": "NotFound",
+                    "name": "notFound",
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                {
+                    "pattern": "Examples",
+                    "name": "examples",
+                    "target": [
+                        "examples"
+                    ]
+                }
+            ],
+            "viewsScreenControl": [
+                {
+                    "viewName": "Home",
+                    "viewId": "home"
+                }
+            ],
+            "targets": {
+                "home": {
+                    "viewName": "Home",
+                    "viewId": "home",
+                    "title": "{i18n>homeViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "notPermission": {
+                    "viewName": "NotPermission",
+                    "viewId": "notPermission",
+                    "title": "{i18n>notPermissionViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "help": {
+                    "viewName": "Help",
+                    "viewId": "help",
+                    "title": "{i18n>helpViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "rating": {
+                    "viewName": "Rating",
+                    "viewId": "rating",
+                    "title": "{i18n>ratingViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "menu": {
+                    "viewName": "Menu",
+                    "viewId": "menu",
+                    "viewLevel": 2,
+                    "title": "{i18n>menuViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "screenControl": {
+                    "viewName": "_ScreenControl",
+                    "viewId": "screenControl",
+                    "viewLevel": 2,
+                    "title": "{i18n>screenControlViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "token": {
+                    "viewName": "Token",
+                    "viewId": "token",
+                    "title": "{i18n>tokenViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "config": {
+                    "viewName": "Config",
+                    "viewId": "config",
+                    "title": "{i18n>configViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "profiles": {
+                    "viewName": "Profiles",
+                    "viewId": "profiles",
+                    "title": "{i18n>profilesViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "partners": {
+                    "viewName": "Partners",
+                    "viewId": "partners",
+                    "title": "{i18n>partnersViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "users": {
+                    "viewName": "Users",
+                    "viewId": "users",
+                    "title": "{i18n>usersViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "groups": {
+                    "viewName": "Groups",
+                    "viewId": "groups",
+                    "title": "{i18n>groupsViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "examples": {
+                    "viewName": "Examples",
+                    "viewId": "examples",
+                    "title": "{i18n>exampleViewTitle}",
+                    "controlAggregation": "beginColumnPages"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "xcop.fsc.service.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        }
+    }
+}

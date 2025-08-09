@@ -1,0 +1,15 @@
+services:
+  sapui5-app:
+    build: .
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+      - CDS_AUTH_KIND=mocked  # Desativar XSUAA para desenvolvimento local
+    expose:
+      - "8005"
+    ports:
+      - "8005:8080"
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules # Evita sobrescrever node_modules com volume local
+    command: ["npm", "start"]
