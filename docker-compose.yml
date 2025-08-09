@@ -5,8 +5,6 @@ services:
     environment:
       - NODE_ENV=development
       - CDS_AUTH_KIND=mocked  # Desativar XSUAA para desenvolvimento local
-    expose:
-      - "8005"
     ports:
       - "8005:8080"
     volumes:
