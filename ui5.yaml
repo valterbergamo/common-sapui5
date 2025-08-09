@@ -3,9 +3,6 @@ metadata:
   name: xcop.fsc.service
 type: application
 server:
-  settings:
-    httpPort: 8080
-    acceptRemoteConnections: true   # <- permite ouvir em 0.0.0.0 dentro do container
   customMiddleware:
     - name: fiori-tools-proxy
       afterMiddleware: compression
